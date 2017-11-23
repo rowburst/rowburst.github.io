@@ -16,9 +16,10 @@ h1 {
 }
 
 .no-pad {
-	/*height: 80%;*//*
-	margin-top: 0px;
-	margin-bottom: 0px;*/
 	padding-top: 0px;
 	padding-bottom: 0px;
+}
+
+.big {
+	font-size: 140%;
 }
