@@ -1,0 +1,24 @@
+h1 {
+	font-family: 'Raleway', sans-serif;
+}
+
+.custom-dark {
+	color: #000;
+}
+
+.custom-bg-red {
+	background-color: #e74c3c;
+}
+
+.code {
+	font-family: 'Lucida Console', Consolas;
+	font-size: 18px; 
+}
+
+.no-pad {
+	/*height: 80%;*//*
+	margin-top: 0px;
+	margin-bottom: 0px;*/
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
