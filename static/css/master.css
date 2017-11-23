@@ -10,6 +10,10 @@ h1 {
 	background-color: #e74c3c;
 }
 
+.custom-bg-dark {
+	background-color: #c0392b;
+}
+
 .code {
 	font-family: 'Lucida Console', Consolas;
 	font-size: 17px; 
