@@ -289,6 +289,10 @@
               </div>
             </div>
           </div>
+
+          <footer class="custom-bg-dark">
+            <p class="content-center">© <span id="currentYear">2017</span> RowBurst. All Rights Reserved.</p>
+          </footer>
         </section>
 
         
@@ -313,6 +317,49 @@
 
     <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
     <script defer src="static/js/svg-icons.js"></script>
+
+    <!-- custom code -->
+    <script type="text/javascript">
+      window.onload = function () {
+        document.getElementById("currentYear").innerHTML = (1900 + (new Date()).getYear());
+      }
+
+      // form for info
+      // $(document).ready(function(){
+      //   // var $form = $('#get-notified-form');
+
+
+      //   var url = 'https://script.google.com/macros/s/AKfycbwTQWLE5P8j1J2QX_GuefVF6u3I-cuOl1wubXbQP8TqPE8XIsM/exec'
+
+      //   $('#submit-form').on('click', function(e) {
+      //     e.preventDefault();
+      //     var email = $('#email').val()
+
+      //     email = email.trim()
+      //     if (email === "") return;
+
+      //     $('#submit-form').attr("disabled", true);
+
+      //     var data = {EMAIL: email}
+      //     console.log(data);
+      //     var jqxhr = $.ajax({
+      //       url: url,
+      //       method: "GET",
+      //       dataType: "json",
+      //       // data: $form.serializeObject()
+      //       data: data
+      //     })
+      //     .done(() => {
+      //       // do something
+      //       console.log('saved');
+      //       $('#email').val('');
+      //       $('#submit-form').val('SUBSCRIBED!')
+      //     });
+      //   })
+      // })
+
+
+    </script>
 
   </body>
 </html>
