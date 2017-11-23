@@ -31,4 +31,10 @@ h1 {
 
 .custom-button {
 	background-color: #c0392b;
+	color: white;
+	border: 1px solid #c0392b;
+}
+
+.custom-button:hover {
+	border: 1px solid white;
 }
