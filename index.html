@@ -280,10 +280,10 @@
                 <form action="/" method="post">
                   <!-- <fieldset> -->
                     <!-- <legend>What you wanna say?</legend> -->
-                    <p><input class="custom-border" type="text" tabindex="1" name="name" placeholder="Name" required=""></p>
-                    <p><input class="custom-border" type="email" tabindex="2" name="email" placeholder="Email" required=""></p>
-                    <p><textarea class="custom-border" type="text" tabindex="3" name="text" placeholder="What are you thinking?" required=""></textarea>
-                    <button class="button ghost custom-button alignright" tabindex="4" title="Sign Up">Go ›</button></p>
+                    <p><input id="name" class="custom-border" type="text" tabindex="1" name="name" placeholder="Name" required=""></p>
+                    <p><input id="email" class="custom-border" type="email" tabindex="2" name="email" placeholder="Email" required=""></p>
+                    <p><textarea id="text" class="custom-border" type="text" tabindex="3" name="text" placeholder="What are you thinking?" required=""></textarea>
+                    <button id="submit-form" class="button ghost custom-button alignright" tabindex="4" title="Sign Up">Go ›</button></p>
                   <!-- </fieldset> -->
                 </form>
               </div>
@@ -318,6 +318,9 @@
     <!-- OPTIONAL - svg-icons.js (fontastic.me - Font Awesome as svg icons) -->
     <script defer src="static/js/svg-icons.js"></script>
 
+    <!-- JQuery from Google CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <!-- custom code -->
     <script type="text/javascript">
       window.onload = function () {
@@ -325,38 +328,39 @@
       }
 
       // form for info
-      // $(document).ready(function(){
-      //   // var $form = $('#get-notified-form');
+      $(document).ready(function(){
 
+        var url = 'https://script.google.com/macros/s/AKfycbz1ewYqebTYnkG33zMm8_Ft1KT2QV_r01O3LKBJ9aDn0o8DzqQv/exec'
 
-      //   var url = 'https://script.google.com/macros/s/AKfycbwTQWLE5P8j1J2QX_GuefVF6u3I-cuOl1wubXbQP8TqPE8XIsM/exec'
+        $('#submit-form').on('click', function(e) {
+          e.preventDefault();
+          var name = $('#name').val().trim()
+          var email = $('#email').val().trim()
+          var text = $('#text').val().trim()
 
-      //   $('#submit-form').on('click', function(e) {
-      //     e.preventDefault();
-      //     var email = $('#email').val()
+          if (email === "") return;
 
-      //     email = email.trim()
-      //     if (email === "") return;
+          $('#submit-form').attr("disabled", true);
 
-      //     $('#submit-form').attr("disabled", true);
-
-      //     var data = {EMAIL: email}
-      //     console.log(data);
-      //     var jqxhr = $.ajax({
-      //       url: url,
-      //       method: "GET",
-      //       dataType: "json",
-      //       // data: $form.serializeObject()
-      //       data: data
-      //     })
-      //     .done(() => {
-      //       // do something
-      //       console.log('saved');
-      //       $('#email').val('');
-      //       $('#submit-form').val('SUBSCRIBED!')
-      //     });
-      //   })
-      // })
+          var data = {name: name, email: email, text: text}
+          console.log(data);
+          var jqxhr = $.ajax({
+            url: url,
+            method: "GET",
+            dataType: "json",
+            // data: $form.serializeObject()
+            data: data
+          })
+          .done(() => {
+            // do something
+            console.log('saved');
+            $('#name').val('');
+            $('#email').val('');
+            $('#text').val('');
+            $('#submit-form').val('DONE!')
+          });
+        });
+      });
 
 
     </script>
